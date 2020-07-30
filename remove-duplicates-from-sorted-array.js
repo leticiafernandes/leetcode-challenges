@@ -2,6 +2,11 @@
 
 challenge number 2
 
+Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
+
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+
+obs:
 was a bit tricky for me to percept that when the number is duplicated i must not increment the i
 
 result:
