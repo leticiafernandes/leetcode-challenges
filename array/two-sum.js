@@ -15,13 +15,13 @@ Example:
 
 /* 
 my notes:
-	- first challenge in my algorithm studies
-	- choose js because is my focus now
 	- response status:
-		Runtime: 220 ms, faster than 12.97% of JavaScript online submissions for Two Sum.
-		Memory Usage: 37.3 MB, less than 29.26% of JavaScript online submissions for Two Sum.
+		Runtime: 84 ms, faster than 64.11% of JavaScript online submissions for Two Sum.
+        Memory Usage: 40.1 MB, less than 7.16% of JavaScript online submissions for Two Sum.
 
-		get better i wll **read in yoda's voice**
+        get better i wll **read in yoda's voice**
+        
+        REFACTOR EDITION - im back
 */
 
 /**
@@ -30,17 +30,18 @@ my notes:
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    for(i=0; i < nums.length; i++){
-        current = nums[i];
-        
-        for(n=nums.length-1; n > 0; n--){
-            if (n === i) break;
-            
-            result = current + nums[n];
-            
-            if(result === target) {
-                return [i, n];
-            }
-        }
+    let elem = new Map();
+    for (var i = 0; i < nums.length; i++) {
+      elem.set(nums[i], i);
+    }
+    
+    for (var i = 0; i < nums.length; i++) {
+      let diff = target - nums[i];
+      
+      let diffElement = elem.get(diff);
+      
+      if(diffElement && i != diffElement){
+        return [i, diffElement]
+      }
     }
 };
